@@ -139,7 +139,7 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#5f5f5f;}
 .navbar-logo img{float: left;width: auto;height: 60px;outline: 0;margin: -13px;border-radius: 100%;transition: all .6s;box-shadow: 0;opacity: 1;}
 .navbar-logo {float: left;}
 .navbar-logo img{float: left;display: block;padding: 0 6px;}
-.navbar-logo h1{float: left;padding: 0px 20px;}
+.navbar-logo h2{float: left;padding: 0px 20px;}
 .navbar-logo:active,.navbar-logo:hover:{box-shadow: 0 0px 4px 0 rgba(0,0,0,0.18), 0 0px 12px 0 rgba(0,0,0,0.15);opacity: .8;}
 .navbar-menu{z-index:10;display:inline-block;width:auto;padding-right:5px;}
 .navbar-menu a{font-size:14px;padding:0 15px;}
