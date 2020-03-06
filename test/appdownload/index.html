@@ -106,17 +106,21 @@
 
 <script>
     $(function(){
-        if (isiOS()) {
+
+        if (isWeiXin()) {
+
+            $('.mark-box').show();
+            $(".ios-link").hide();
+            $(".android-link").hide();
+        } else if (isiOS()) {
             // let lang=window.location.href.split('=')[1];
             // if(lang&&lang!=""&&lang!='cn'){
             //     $('.next-btn.ios-link').attr('href','https://itunes.apple.com/us/app/gate-io/id1294998195?l=zh&ls=1&mt=8')
             // }
-            // $(".android-link").hide();
+            $(".android-link").hide();
         } else {
+
             $(".ios-link").hide();
-        }
-        if(isWeiXin()){
-            $('.mark-box').show();
         }
     })
 </script>
