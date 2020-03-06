@@ -1,51 +1,100 @@
-﻿<!DOCTYPE html>
-<!-- saved from url=(0023)http:://dj.caodanlie.cn -->
-<html lang="zh-CN" style="font-size: 100px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+﻿    
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>Hydax app下载</title>
     <link rel="stylesheet" href="static/css/mh_style.css">
-    <script>
-      adaptation(750);
-      function adaptation(size) {
-        if (document.documentElement.clientWidth > size) {
-          document.documentElement.style.fontSize = size / 7.5 + "px"
-        } else {
-          document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px"
-        }
-      }
-    </script>
- 
-    </head>
-<body>
-<div class="warp">
-<!--     <div class="header">
-        <div class="soft-logo">
-            <img src="static/picture/5c420ea05364d.png" alt="我爱影视">
-        </div>
-        <div class="soft-name">
-            <p>我爱影视</p>
-            <p><b>48万人已下载此应用</b></p>
-        </div>
-        <div class="soft-down">
-            <div class="soft-btn" onclick="down()"><img src="static/picture/5c420dbcbee08.gif" alt="立即下载"></div>
-        </div>
-    </div> -->
-    <div class="soft-cont">
-        <img src="https://static.bhfastime.com/bhop/image/m-flYq_AJ9Af3CVKpcubnajgt1_FyyruCcRRJlTN6Mk.png" alt="">
-        <img src="static/picture/5c420bf701d88.jpg" alt="" class="softDown" onclick="down()">
-        <!-- <img src="static/picture/5c420c1501036.jpg" alt="" class="softDown" onclick="down()"> -->
-    </div>
-</div>
+    <script src="static/js/min.js"></script>
+</head>
 
+<body
+    class="cn-body ">
+        
+    <script>
+    function isWeiXin() {
+        var ua = window.navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function isMiui() {
+        var ua = window.navigator.userAgent.toLowerCase();
+        if (ua.match(/MiuiBrowser/i)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function isiOS() {
+        var ua = window.navigator.userAgent.toLowerCase();
+        if (ua.match(/iPhone|iPad|iPod|iOS/i)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function adrDown(oldVersion) {
+        if (isWeiXin()) {
+            document.getElementById("mCover").style.display = "block";
+        } else {
+            window.location.href = 'https://static.bhfastime.com/app/android/hydax_com_2.0.9_6874.apk';
+        }
+    }
+
+    function loadiOSDown() {
+
+        $('.warp').hide();
+        $('.step').show();
+        window.location.href = 'itms-services://?action=download-manifest&url=itms-services://?action=download-manifest&url=https://static.bhfastime.com/app/ios/hydax_com_1.6.0_1567662481545.plist';
+    }
+</script>
+
+<div class="page-content">
+    <div class="mark-box">
+        <img src="static/picture/arrows.svg">
+        <div class="explain">
+            <div class="first">
+                <p>1. 点击右上角</p><span>...</span>
+            </div>
+            <img src="static/picture/down-triangle.svg">
+            <p>2. 选择“在浏览器中打开”</p>
+            <img src="static/picture/down-triangle.svg">
+            <p>3. 点击页面中的按钮即<br />&emsp;可下载</p>
+        </div>
+    </div>
+    <section class="page" id="page1">
+        
+        <div class="page-cell introduct">
+            <img src="https://static.bhfastime.com/bhop/image/m-flYq_AJ9Af3CVKpcubnajgt1_FyyruCcRRJlTN6Mk.png" alt="">
+        </div>
+        <div class="page-footer">
+            <a class="next-btn ios-link" 
+                            onclick="loadiOSDown()" 
+                >
+                <p>iOS 企业版 下载</p>
+            </a>
+            <a class="location-download ios-link" href="https://testflight.apple.com/join/LWzqyyRA">iOS TestFlight版 下载</a>
+             <a class="next-btn android-link"  onclick="adrDown('')" >
+                <img src="static/picture/app_android_icon.svg">
+                <p>Android 本地下载</p>
+            </a>
+        </div>
+    </section>
+</div>
 
 <div class="step" style="display:none;">
     <div class="step-header">
         苹果手机如何通过信任教程
     </div>
-	<img src="static/picture/5c420d0d4c835.png" alt="">
+    <img src="static/picture/5c420d0d4c835.png" alt="">
     <img src="static/picture/5c420ca1f31b0.png" alt="">
     <img src="static/picture/5c420cabe1233.png" alt="">
     <img src="static/picture/5c420cbb0f278.png" alt="">
@@ -54,33 +103,20 @@
     <img src="static/picture/5c420cdb47fbd.png" alt="">
     <img src="static/picture/5c420ce48a04c.png" alt="">
 </div>
-<div class="weixin" style="display:none;">
-    <img src="static/picture/5c420d0d4c835.png" alt="">
-</div>
-<script src="static/js/min.js"></script>
+
 <script>
-    $(function () {
-        $('.softDown').on('click',function () {
-            if( typeof WeixinJSBridge !== "undefined" ) {
-                $('.weixin').show();
-            }else{
-                down();
-            }
-        });
-    });
-    function down() {
-        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
-            //苹果下载地址
-            window.location.href ="https://testflight.apple.com/join/QNUjukkj";  //这里替换你的下载地址
-            $('.warp').hide();
-            $('.step').show();
-        } else if (/(Android)/i.test(navigator.userAgent)) {
-            //安卓下载地址
-            window.location.href ="https://static.bhfastime.com/app/android/hydax_com_2.0.9_6874.apk";  //这里替换你的下载地址
+    $(function(){
+        if (isiOS()) {
+            // let lang=window.location.href.split('=')[1];
+            // if(lang&&lang!=""&&lang!='cn'){
+            //     $('.next-btn.ios-link').attr('href','https://itunes.apple.com/us/app/gate-io/id1294998195?l=zh&ls=1&mt=8')
+            // }
+            // $(".android-link").hide();
         } else {
-            //pc下载地址，默认可以为安卓版本
-            window.location.href ="https://fir.im/52ying/";  //这里替换你的下载地址
+            $(".ios-link").hide();
         }
-    }
+        if(isWeiXin()){
+            $('.mark-box').show();
+        }
+    })
 </script>
-</body></html>
