@@ -73,18 +73,18 @@
     <section class="page" id="page1">
         
         <div class="page-cell introduct">
-            <img src="https://static.bhfastime.com/bhop/image/m-flYq_AJ9Af3CVKpcubnajgt1_FyyruCcRRJlTN6Mk.png" alt="">
+            <img id="content-img" src="https://static.bhfastime.com/bhop/image/f1G_QvertomNYRuuqsQTbrd6WIUN9SHp-JOW0A1Wuy4.png" alt="">
         </div>
         <div class="page-footer">
             <a class="next-btn ios-link" 
                             onclick="loadiOSDown()" 
                 >
-                <p>iOS 企业版 下载</p>
+                <p id="iOS-company">iOS 企业版 下载</p>
             </a>
-            <a class="location-download ios-link" href="https://testflight.apple.com/join/QNUjukkj">iOS TestFlight版 下载</a>
+            <a class="location-download ios-link" id="iOS-TestFlight" href="https://testflight.apple.com/join/QNUjukkj">iOS TestFlight版 下载</a>
              <a class="next-btn android-link"  onclick="adrDown('')" >
                 <img src="static/picture/app_android_icon.svg">
-                <p>Android 本地下载</p>
+                <p id="android-p">Android 本地下载</p>
             </a>
         </div>
     </section>
@@ -107,16 +107,33 @@
 <script>
     $(function(){
 
+        var language = (navigator.browserLanguage || navigator.language).toLowerCase();
+        console.log(language)
+        var contentimg = ""
+
+        if ((language == 'zh-tw') || (language == 'zh-hk')) {
+
+            contentimg = 'https://static.bhfastime.com/bhop/image/m-flYq_AJ9Af3CVKpcubnajgt1_FyyruCcRRJlTN6Mk.png';
+        } else if (language == 'zh-cn') {
+
+            contentimg = 'https://static.bhfastime.com/bhop/image/m-flYq_AJ9Af3CVKpcubnajgt1_FyyruCcRRJlTN6Mk.png';
+        } else {
+
+            contentimg = 'https://static.bhfastime.com/bhop/image/f1G_QvertomNYRuuqsQTbrd6WIUN9SHp-JOW0A1Wuy4.png';
+
+            $('#iOS-company').text('iOS Enterprise Download');
+            $('#iOS-TestFlight').text('iOS TestFlight download');
+            $('#android-p').text('Android local download');
+        }
+
+        $('#content-img').attr('src',contentimg);
+
         if (isWeiXin()) {
 
             $('.mark-box').show();
             $(".ios-link").hide();
             $(".android-link").hide();
         } else if (isiOS()) {
-            // let lang=window.location.href.split('=')[1];
-            // if(lang&&lang!=""&&lang!='cn'){
-            //     $('.next-btn.ios-link').attr('href','https://itunes.apple.com/us/app/gate-io/id1294998195?l=zh&ls=1&mt=8')
-            // }
             $(".android-link").hide();
         } else {
 
