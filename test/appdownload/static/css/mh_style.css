@@ -3,6 +3,8 @@ body,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd,p {margin:0;}
 * {box-sizing:border-box;}
 body {background:#253E6E;}
 p {margin:0;color:#fff;}
+a {text-decoration:none;color:inherit;}
+
 .page-content {width:100%;overflow-x:hidden;overflow-y:auto;display:flex;justify-content:center;}
 .page {width:100%;padding-bottom: 130px;}
 
