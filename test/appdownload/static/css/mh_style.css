@@ -31,9 +31,9 @@ img {vertical-align:top;border:none;}
 .mark-box .explain span {height:16px;line-height:0px;font-size:30px;margin-left:10px;}
 .mark-box .explain>img {width:17px;height:15px;margin:19px 0 12px 0;margin-left:66px;}
 
-.step{margin:0 auto;width:7.5rem;background:#000 url("../images/step-header.jpg") no-repeat top / contain;text-align:center;}
+.step{margin:0 auto;width:100%; url("../images/step-header.jpg") no-repeat top / contain;text-align:center;}
 .step-header{padding:.5rem 0;font-size:.36rem;color:#fff;}
-.step img{margin-bottom:.3rem;width:6.9rem;}
+.step img{margin-bottom:.3rem;width:100%;}
 
 
 
