@@ -15,7 +15,12 @@
 					</a>
 					<div class="item-slant reverse-slant  bg-{{ posts.background }}"></div>
 					<div class="item-slant">	<div class="liberxue-title">
-				原创
+						{% posts.isReprint %}
+							转载
+						{% else %}
+							原创
+						{% endif %}
+
 				</div></div>
 					<div class="item-label">
 						<div class="item-title"><a href="{{ posts.url }}" title="访问 {{ posts.title }}">{{ posts.title }}</a></div>
